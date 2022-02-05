@@ -13,7 +13,7 @@ public class Subsequence {
      * @return <code>true</code> if possible, otherwise <code>false</code>
      */
     @SuppressWarnings("rawtypes")
-    public boolean find(List x, List y) {
+    public <T> boolean find(List <T> x, List <T> y) {
         // TODO: Implement the logic here
         boolean allExist = true;
         int temp = 0;
