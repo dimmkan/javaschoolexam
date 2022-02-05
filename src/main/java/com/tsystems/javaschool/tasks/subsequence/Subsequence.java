@@ -17,9 +17,6 @@ public class Subsequence {
         // TODO: Implement the logic here
         boolean allExist = true;
         int temp = 0;
-        if (x.isEmpty() || y.isEmpty()) {
-            return false;
-        }
         for (int j = 0; j < x.size(); j++) {
             if (allExist == true) {
                 allExist = false;
@@ -32,7 +29,6 @@ public class Subsequence {
                 }
             } else break;
         }
-
         return allExist;
     }
 }
