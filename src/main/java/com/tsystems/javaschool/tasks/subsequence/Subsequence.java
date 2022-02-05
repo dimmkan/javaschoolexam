@@ -15,22 +15,23 @@ public class Subsequence {
     @SuppressWarnings("rawtypes")
     public boolean find(List x, List y) {
         // TODO: Implement the logic here
-        if (x.isEmpty() || y.isEmpty()) {
-            return false;
-        }
         boolean allExist = true;
         int temp = 0;
-        for (int j = 0; j < x.size(); j++) {
-            if (allExist == true) {
-                allExist = false;
-                for (int i = temp; i < y.size(); i++) {
-                    if (y.get(i).equals(x.get(j))) {
-                        temp = i;
-                        allExist = true;
-                        break;
+        if (x.isEmpty() || y.isEmpty()) {
+            allExist = false;
+        } else {
+            for (int j = 0; j < x.size(); j++) {
+                if (allExist == true) {
+                    allExist = false;
+                    for (int i = temp; i < y.size(); i++) {
+                        if (y.get(i).equals(x.get(j))) {
+                            temp = i;
+                            allExist = true;
+                            break;
+                        }
                     }
-                }
-            } else break;
+                } else break;
+            }
         }
         return allExist;
     }
