@@ -25,7 +25,7 @@ public class PyramidBuilder {
                 pyramid = new int[n][2*n - 1];
                 int k = 0;
                 for (int i = 0; i < n; i++) {
-                    for (int j = 0; j < n + (n - 1); j++) {
+                    for (int j = 0; j < (2*n - 1); j++) {
                         pyramid[i][j] = 0;
                     }
                     int b = n - i - 1;
