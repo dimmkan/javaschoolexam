@@ -95,42 +95,46 @@ public class Calculator {
     }
 
     private String calculateStack (Stack<String> out){
-        if(out!=null){
-            stack.clear();
-            for (String token : out){
-                if (isNumber(token)){
-                    stack.push(token);
-                }else if (isOperator(token)){
-                    if(token.equals("+")){
-                        Double d1 = Double.parseDouble(stack.pop());
-                        Double d2 = Double.parseDouble(stack.pop());
-                        Double result = d1 + d2;
-                        stack.push(result.toString());
+        try {
+            if(out!=null){
+                stack.clear();
+                for (String token : out){
+                    if (isNumber(token)){
+                        stack.push(token);
+                    }else if (isOperator(token)){
+                        if(token.equals("+")){
+                            Double d1 = Double.parseDouble(stack.pop());
+                            Double d2 = Double.parseDouble(stack.pop());
+                            Double result = d1 + d2;
+                            stack.push(result.toString());
+                        }
+                        else if(token.equals("-")){
+                            Double d1 = Double.parseDouble(stack.pop());
+                            Double d2 = Double.parseDouble(stack.pop());
+                            Double result = d2 - d1;
+                            stack.push(result.toString());
+                        }else if(token.equals("*")){
+                            Double d1 = Double.parseDouble(stack.pop());
+                            Double d2 = Double.parseDouble(stack.pop());
+                            Double result = d1 * d2;
+                            stack.push(result.toString());
+                        }
+                        else if(token.equals("/")){
+                            Double d1 = Double.parseDouble(stack.pop());
+                            Double d2 = Double.parseDouble(stack.pop());
+                            Double result = d2 / d1;
+                            stack.push(result.toString());
+                        }
                     }
-                    else if(token.equals("-")){
-                        Double d1 = Double.parseDouble(stack.pop());
-                        Double d2 = Double.parseDouble(stack.pop());
-                        Double result = d2 - d1;
-                        stack.push(result.toString());
-                    }else if(token.equals("*")){
-                        Double d1 = Double.parseDouble(stack.pop());
-                        Double d2 = Double.parseDouble(stack.pop());
-                        Double result = d1 * d2;
-                        stack.push(result.toString());
-                    }
-                    else if(token.equals("/")){
-                        Double d1 = Double.parseDouble(stack.pop());
-                        Double d2 = Double.parseDouble(stack.pop());
-                        Double result = d2 / d1;
-                        stack.push(result.toString());
+                    else if(isOpenBrackets(token) || isCloseBrackets(token)){
+                        return null;
                     }
                 }
-                else if(isOpenBrackets(token) || isCloseBrackets(token)){
-                    return null;
-                }
+                return decimalFormat.format(Double.parseDouble(stack.pop()));
+            }else{
+                return null;
             }
-            return decimalFormat.format(Double.parseDouble(stack.pop()));
-        }else{
+        }catch (Exception e){
             return null;
         }
     }
