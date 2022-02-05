@@ -11,12 +11,9 @@ The exam includes 3 tasks to be done: [Calculator](/tasks/Calculator.md), [Pyram
 
 ### Result ###
 
-* Author name : {PUT YOUR NAME HERE}
-* Codeship : {PUT YOUR CODESHIP BAGDE HERE}
-
-Example of Codeship badge. Please remove the example before you send us the link. 
-[ ![Codeship Status for tschool/javaschoolexam](https://app.codeship.com/projects/a9af8940-d130-0134-89a6-5e8aaaa2a5a2/status?branch=master)](https://app.codeship.com/projects/201451)
-
+* Author name : Dmitry Kanaev
+* CircleCI : https://app.circleci.com/pipelines/gh/dimmkan/javaschoolexam?filter=all
+* Test result :https://app.circleci.com/pipelines/gh/dimmkan/javaschoolexam/22/workflows/3882e572-946f-40cb-a076-1c32ee213f1e/jobs/22/steps
 
 ### How to start?  ###
 * Install [GIT](https://git-scm.com/) and [Maven](https://maven.apache.org)
