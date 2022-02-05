@@ -72,6 +72,9 @@ public class Calculator {
                         out.push(stack.pop());
                     }
                     stack.pop();
+                    if(!stack.empty() && isOperator(stack.lastElement())){
+                        out.push(stack.pop());
+                    }
                 }
                 else if (isNumber(token)){
                     out.push(token);
@@ -100,20 +103,26 @@ public class Calculator {
                     stack.push(token);
                 }else if (isOperator(token)){
                     if(token.equals("+")){
-                        Double result = Double.parseDouble(stack.pop()) + Double.parseDouble(stack.pop());
+                        Double d1 = Double.parseDouble(stack.pop());
+                        Double d2 = Double.parseDouble(stack.pop());
+                        Double result = d1 + d2;
                         stack.push(result.toString());
                     }
                     else if(token.equals("-")){
-                        Collections.reverse(stack);
-                        Double result = Double.parseDouble(stack.pop()) - Double.parseDouble(stack.pop());
+                        Double d1 = Double.parseDouble(stack.pop());
+                        Double d2 = Double.parseDouble(stack.pop());
+                        Double result = d2 - d1;
                         stack.push(result.toString());
                     }else if(token.equals("*")){
-                        Double result = Double.parseDouble(stack.pop()) * Double.parseDouble(stack.pop());
+                        Double d1 = Double.parseDouble(stack.pop());
+                        Double d2 = Double.parseDouble(stack.pop());
+                        Double result = d1 * d2;
                         stack.push(result.toString());
                     }
                     else if(token.equals("/")){
-                        Collections.reverse(stack);
-                        Double result = Double.parseDouble(stack.pop()) / Double.parseDouble(stack.pop());
+                        Double d1 = Double.parseDouble(stack.pop());
+                        Double d2 = Double.parseDouble(stack.pop());
+                        Double result = d2 / d1;
                         stack.push(result.toString());
                     }
                 }
