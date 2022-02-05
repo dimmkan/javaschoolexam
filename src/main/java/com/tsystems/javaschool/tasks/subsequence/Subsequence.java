@@ -13,26 +13,26 @@ public class Subsequence {
      * @return <code>true</code> if possible, otherwise <code>false</code>
      */
     @SuppressWarnings("rawtypes")
-    public <T> boolean find(List <T> x, List <T> y) {
+    public <T> boolean find(List<T> x, List<T> y) {
         // TODO: Implement the logic here
         boolean allExist = true;
         int temp = 0;
         if (x.isEmpty() || y.isEmpty()) {
-            allExist = false;
-        } else {
-            for (int j = 0; j < x.size(); j++) {
-                if (allExist == true) {
-                    allExist = false;
-                    for (int i = temp; i < y.size(); i++) {
-                        if (y.get(i).equals(x.get(j))) {
-                            temp = i;
-                            allExist = true;
-                            break;
-                        }
-                    }
-                } else break;
-            }
+            return false;
         }
+        for (int j = 0; j < x.size(); j++) {
+            if (allExist == true) {
+                allExist = false;
+                for (int i = temp; i < y.size(); i++) {
+                    if (y.get(i).equals(x.get(j))) {
+                        temp = i;
+                        allExist = true;
+                        break;
+                    }
+                }
+            } else break;
+        }
+
         return allExist;
     }
 }
