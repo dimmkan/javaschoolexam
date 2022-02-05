@@ -1,7 +1,6 @@
 package com.tsystems.javaschool.tasks.calculator;
 
 import java.text.DecimalFormat;
-import java.util.Collections;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
