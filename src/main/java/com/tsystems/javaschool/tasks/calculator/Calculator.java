@@ -123,6 +123,7 @@ public class Calculator {
                             Double d1 = Double.parseDouble(stack.pop());
                             Double d2 = Double.parseDouble(stack.pop());
                             Double result = d2 / d1;
+                            if (result == Float.POSITIVE_INFINITY || result == Float.NEGATIVE_INFINITY) throw new Exception();
                             stack.push(result.toString());
                         }
                     }
