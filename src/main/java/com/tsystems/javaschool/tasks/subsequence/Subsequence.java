@@ -15,25 +15,24 @@ public class Subsequence {
     @SuppressWarnings("rawtypes")
     public <T> boolean find(List<T> x, List<T> y) {
         // TODO: Implement the logic here
-        try {
-            boolean allExist = true;
-            int temp = 0;
-            for (int j = 0; j < x.size(); j++) {
-                if (allExist == true) {
-                    allExist = false;
-                    for (int i = temp; i < y.size(); i++) {
-                        if (y.get(i).equals(x.get(j))) {
-                            temp = i;
-                            allExist = true;
-                            break;
-                        }
-                    }
-                } else break;
-            }
-            return allExist;
-        } catch (NullPointerException e) {
+        if(x == null || y == null){
             throw new IllegalArgumentException();
         }
+        boolean allExist = true;
+        int temp = 0;
+        for (int j = 0; j < x.size(); j++) {
+            if (allExist == true) {
+                allExist = false;
+                for (int i = temp; i < y.size(); i++) {
+                    if (y.get(i).equals(x.get(j))) {
+                        temp = i;
+                        allExist = true;
+                        break;
+                    }
+                }
+            } else break;
+        }
+        return allExist;
     }
 }
 
