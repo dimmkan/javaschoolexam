@@ -22,7 +22,7 @@ public class PyramidBuilder {
             double D = Math.sqrt(1 + 8 * inputNumbers.size());
             if (D > 0 && D % 1 == 0) {
                 int n = (int) ((D - 1) / 2);
-                pyramid = new int[n][n + (n - 1)];
+                pyramid = new int[n][2*n - 1];
                 int k = 0;
                 for (int i = 0; i < n; i++) {
                     for (int j = 0; j < n + (n - 1); j++) {
