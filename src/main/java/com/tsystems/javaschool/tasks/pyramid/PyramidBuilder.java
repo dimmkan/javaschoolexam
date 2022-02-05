@@ -14,7 +14,7 @@ public class PyramidBuilder {
      * @return 2d array with pyramid inside
      * @throws {@link CannotBuildPyramidException} if the pyramid cannot be build with given input
      */
-    public int[][] buildPyramid(List<Integer> inputNumbers) {
+    public int[][] buildPyramid(List<Integer> inputNumbers) throws CannotBuildPyramidException{
         // TODO : Implement your solution here
         try {
             Collections.sort(inputNumbers);
@@ -38,7 +38,7 @@ public class PyramidBuilder {
             } else {
                 throw new CannotBuildPyramidException("Can't build pyramid");
             }
-        } catch (Exception e) {
+        } catch (Throwable e) {
             throw new CannotBuildPyramidException("Can't build pyramid");
         }
     }
