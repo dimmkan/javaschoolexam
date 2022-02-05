@@ -41,5 +41,6 @@ public class PyramidBuilder {
         }catch (Exception e){
             throw new CannotBuildPyramidException("Can't build pyramid");
         }
+        
     }
 }
