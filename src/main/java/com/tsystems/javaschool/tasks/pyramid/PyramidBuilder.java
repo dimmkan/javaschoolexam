@@ -19,7 +19,7 @@ public class PyramidBuilder {
         Collections.sort(inputNumbers);
         int[][] pyramid;
         double D = Math.sqrt(1 + 8 * inputNumbers.size());
-
+        try{
         if(D > 0 && D % 1 == 0){
             int n = (int)((D - 1) / 2);
             pyramid = new int[n][n+(n-1)];
@@ -36,6 +36,9 @@ public class PyramidBuilder {
             }
             return pyramid;
         }else{
+            throw new CannotBuildPyramidException("Can't build pyramid");
+        }
+        }catch (Exception e){
             throw new CannotBuildPyramidException("Can't build pyramid");
         }
     }
