@@ -12,7 +12,6 @@ public class Subsequence {
      * @param y second sequence
      * @return <code>true</code> if possible, otherwise <code>false</code>
      */
-    @SuppressWarnings("rawtypes")
     public <T> boolean find(List<T> x, List<T> y) {
         // TODO: Implement the logic here
         if(x == null || y == null){
