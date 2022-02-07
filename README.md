@@ -11,9 +11,7 @@ The exam includes 3 tasks to be done: [Calculator](/tasks/Calculator.md), [Pyram
 
 ### Result ###
 
-* Author name : Dmitry Kanaev
-* CircleCI : https://app.circleci.com/pipelines/gh/dimmkan/javaschoolexam?filter=all
-* Test result :https://app.circleci.com/pipelines/gh/dimmkan/javaschoolexam/22/workflows/3882e572-946f-40cb-a076-1c32ee213f1e/jobs/22/steps
+Dmitry Kanaev: [![CircleCI](https://circleci.com/gh/dimmkan/javaschoolexam.svg?style=svg)](https://circleci.com/gh/dimmkan/javaschoolexam)
 
 ### How to start?  ###
 * Install [GIT](https://git-scm.com/) and [Maven](https://maven.apache.org)
